@@ -14,6 +14,8 @@ public class EcoPointsRecyclingTracker {
 
     public static void main(String[] args) {
     boolean running = true;
+    // Load existing households from file at startup
+    loadHouseholdsFromFile();
     while (running) {
         System.out.println("\n=== Eco-Points Recycling Tracker ===");
         System.out.println("1. Register Household");
@@ -244,6 +246,7 @@ public class EcoPointsRecyclingTracker {
             System.out.println("Error saving data: " + e.getMessage());
         }
     }
+
     @SuppressWarnings("unchecked") // Suppresses unchecked cast warning when reading the object
     private static void loadHouseholdsFromFile() {
         // Use a try-with-resources block to automatically close the input stream
